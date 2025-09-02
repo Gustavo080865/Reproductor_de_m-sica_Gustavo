@@ -1,7 +1,58 @@
-<html> 
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<body>
-  <h1>Reproductor de música</h1>
-</body>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música - Gustavo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<body>
+    <div class="player-container">
+        <div class="background-overlay"></div>
+        <div class="player-header">
+            <p>REPRODUCTOR DE MÚSICA</p>
+            <h1>Gustavo Rodríguez</h1>
+        </div>
+        <div class="song-info">
+            <div class="song-image">
+                <img src="https://via.placeholder.com/150" alt="Carátula de la canción" id="current-song-img">
+            </div>
+            <h2 id="current-song-title">Título de la Canción</h2>
+            <h3 id="current-song-artist">Artista</h3>
+        </div>
+        <div class="progress-area">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="timer">
+                <span id="current-time">0:00</span>
+                <span id="total-time">0:00</span>
+            </div>
+        </div>
+        <div class="controls">
+            <i id="prev-btn" class="fas fa-backward"></i>
+            <i id="play-pause-btn" class="fas fa-play"></i>
+            <i id="next-btn" class="fas fa-forward"></i>
+        </div>
+        <input type="file" id="audio-file-input" accept="audio/*" multiple style="display: none;">
+        <button id="add-songs-btn" class="add-songs-button"><i class="fas fa-plus"></i> Añadir Canciones</button>
+        <div class="playlist-toggle-area">
+            <button id="toggle-playlist-btn" class="toggle-playlist-button"><i class="fas fa-list"></i> Lista de Reproducción</button>
+        </div>
+        <div class="playlist" id="playlist-container">
+            <div class="playlist-header">
+                <h3>Lista de Reproducción</h3>
+                <i id="close-playlist-btn" class="fas fa-times"></i>
+            </div>
+            <ul id="playlist-ul">
+                <!-- Las canciones se añadirán aquí dinámicamente -->
+            </ul>
+        </div>
+    </div>
+
+    <audio id="audio-player"></audio>
+
+    <script src="script.js"></script>
+</body>
 </html>
